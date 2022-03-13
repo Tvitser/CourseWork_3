@@ -1,0 +1,8 @@
+venv/
+.idea/
+.*_cache/
+__pycache__
+.coverage
+dao/__pycache__/
+dao/models/__pycache__/
+project/helpers/__pycache__/
