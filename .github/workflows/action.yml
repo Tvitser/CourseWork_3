@@ -44,5 +44,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd CourseWork_3
+            cd flask-app
             echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose up -d
