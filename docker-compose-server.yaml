@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   api:
-    image: sermalenk/flask-app:version-1
+    image: twitser/flask-app:version-1
     ports:
     - 80:80
     depends_on:
@@ -12,7 +12,7 @@ services:
     volumes:
       - ./docker_config.py:/code/default_config.py
   migrations:
-    image: sermalenk/flask-app:version-1
+    image: twitser/flask-app:version-1
     depends_on:
       postgres:
         condition: service_healthy
@@ -22,8 +22,8 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: myapp
+      POSTGRES_PASSWORD: flask-app-password
+      POSTGRES_DB: flask-app
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
