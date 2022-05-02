@@ -11,14 +11,6 @@ services:
         condition: service_completed_successfully
     volumes:
       - ./docker_config.py:/code/default_config.py
-  migrations:
-    image: twitser/flask-app:version-1
-    depends_on:
-      postgres:
-        condition: service_healthy
-    volumes:
-      - ./docker_config.py:/code/default_config.py
-    command: flask db upgrade
   postgres:
     image: postgres:latest
     environment:
