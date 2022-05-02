@@ -9,6 +9,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 # Новый слой
 COPY run.py .
-
+ENV FLASK_APP=run.py
+ENV FLASK_ENV='development'
 # Новый слой
 CMD flask run -h 0.0.0.0 -p 80
