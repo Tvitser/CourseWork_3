@@ -9,6 +9,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 # Новый слой
 COPY run.py .
+COPY . ./
 ENV FLASK_APP=run.py
 ENV FLASK_ENV='development'
 # Новый слой
